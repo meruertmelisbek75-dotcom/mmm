@@ -1,32 +1,178 @@
-<!DOCTYPE html>
-<html lang="kk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тоқты - Зодиак Белгісі</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Тоқты (Арыстан / Овен)</h1>
-        <a href="index.html" class="back-btn">&larr; Басты бетке қайту</a>
-    </header>
+/* Google Fonts арқылы әдемі шрифт қосу */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    <main class="detail-container">
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800" alt="Тоқты">
-        <div class="info">
-            <h2>Мінездемесі</h2>
-            <p>Тоқты — от стихиясына жататын алғашқы зодиак белгісі. Олар табиғатынан көшбасшы, батыл және шешім қабылдауға шебер келеді.</p>
-            <ul>
-                <li><strong>Стихиясы:</strong> От</li>
-                <li><strong>Түсі:</strong> Қызыл</li>
-                <li><strong>Сәтті күні:</strong> Сейсенбі</li>
-            </ul>
-        </div>
-    </main>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <footer>
-        <p>&copy; 2026 Зодиак Сайты</p>
-    </footer>
-</body>
-</html>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #1a0b2e, #090314);
+    color: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(45deg, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+/* Көп беттік негізгі контейнер */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Зодиак карталары */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #f3e8ff;
+}
+
+.card p {
+    color: #c084fc;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Батырмалар */
+.btn, .back-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: linear-gradient(45deg, #8b5cf6, #ec4899);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.btn:hover, .back-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Толығырақ басқанда ашылатын ДЕТАЛЬДЫ БЕТ (.detail-container) */
+.detail-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.detail-container img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.info h2 {
+    font-size: 1.8rem;
+    color: #e9d5ff;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #8b5cf6;
+    padding-bottom: 8px;
+}
+
+.info p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #d1d5db;
+    margin-bottom: 20px;
+}
+
+.info ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.info ul li {
+    background: rgba(139, 92, 246, 0.15);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ec4899;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* Телефондарға арналған бейімделу (Responsive) */
+@media (max-width: 768px) {
+    .detail-container {
+        grid-template-columns: 1fr;
+        margin: 20px;
+        padding: 20px;
+    }
+    .detail-container img {
+        height: 250px;
+    }
+}
