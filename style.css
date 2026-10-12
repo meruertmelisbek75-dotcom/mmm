@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тоқты - Зодиак Белгісі</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Тоқты (Арыстан / Овен)</h1>
+        <a href="index.html" class="back-btn">&larr; Басты бетке қайту</a>
+    </header>
+
+    <main class="detail-container">
+        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800" alt="Тоқты">
+        <div class="info">
+            <h2>Мінездемесі</h2>
+            <p>Тоқты — от стихиясына жататын алғашқы зодиак белгісі. Олар табиғатынан көшбасшы, батыл және шешім қабылдауға шебер келеді.</p>
+            <ul>
+                <li><strong>Стихиясы:</strong> От</li>
+                <li><strong>Түсі:</strong> Қызыл</li>
+                <li><strong>Сәтті күні:</strong> Сейсенбі</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Зодиак Сайты</p>
+    </footer>
+</body>
+</html>
